@@ -45,7 +45,7 @@ func main() {
 	)
 
 	const (
-		defaultMode string = "m"
+		defaultMode string = "s"
 		modeUsage          = "single core=s, multi cores=m"
 	)
 
@@ -84,10 +84,10 @@ func main() {
 	startTime := time.Now()
 	fmt.Println("Start: ", startTime)
 
-	if mode == "s" {
-		singlefinder.FindDiff(firstFileName, secondFileName, outputFileName)
-	} else {
+	if mode == "m" {
 		multifinder.FindDiff(firstFileName, secondFileName, outputFileName)
+	} else {
+		singlefinder.FindDiff(firstFileName, secondFileName, outputFileName)
 	}
 
 	endTime := time.Now()
